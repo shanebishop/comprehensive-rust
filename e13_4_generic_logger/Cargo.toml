@@ -1,0 +1,6 @@
+[package]
+name = "e13_4_generic_logger"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
