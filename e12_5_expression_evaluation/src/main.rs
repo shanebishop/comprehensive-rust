@@ -11,7 +11,11 @@ enum Operation {
 #[derive(Debug)]
 enum Expression {
     /// An operation on two subexpressions.
-    Op { op: Operation, left: Box<Expression>, right: Box<Expression> },
+    Op {
+        op: Operation,
+        left: Box<Expression>,
+        right: Box<Expression>,
+    },
 
     /// A literal value
     Value(i64),
@@ -23,7 +27,7 @@ fn eval(e: Expression) -> Result<i64, String> {
 
     match e {
         Value(v) => Ok(v),
-        Op{op, left, right} => match op {
+        Op { op, left, right } => match op {
             Add => Ok(eval(*left)? + eval(*right)?),
             Sub => Ok(eval(*left)? - eval(*right)?),
             Mul => Ok(eval(*left)? * eval(*right)?),
@@ -35,7 +39,7 @@ fn eval(e: Expression) -> Result<i64, String> {
                     Ok(eval(*left)? / right)
                 }
             }
-        }
+        },
     }
 }
 

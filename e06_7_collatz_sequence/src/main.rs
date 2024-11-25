@@ -4,7 +4,7 @@ fn collatz_length(mut n: u32) -> u32 {
     // If the input is 1, then the sequence terminates
     // right away, and the length is 1.
     if n == 1 {
-        return 1
+        return 1;
     }
 
     let mut len = 1; // n_1 is the first value

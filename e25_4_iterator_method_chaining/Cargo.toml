@@ -1,0 +1,6 @@
+[package]
+name = "e25_4_iterator_method_chaining"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

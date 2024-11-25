@@ -20,7 +20,10 @@ fn normalize(v: &mut [f64]) {
 
 // Use the following `main` to test your work.
 fn main() {
-    println!("Magnitude of a unit vector: {}", magnitude(&[0.0, 1.0, 0.0]));
+    println!(
+        "Magnitude of a unit vector: {}",
+        magnitude(&[0.0, 1.0, 0.0])
+    );
 
     let mut v = [1.0, 2.0, 9.0];
     println!("Magnitude of {v:?}: {}", magnitude(&v));

@@ -1,0 +1,14 @@
+[workspace]
+members = [
+    "e05_6_fibonacci",
+    "e06_7_collatz_sequence",
+    "e08_5_nested_arrays",
+    "e09_5_geometry",
+    "e10_7_elevator_events",
+    "e12_5_expression_evaluation",
+    "e13_4_generic_logger",
+    "e15_7_generic_min",
+    "e16_8_counter",
+    "e17_8_rot13", "e19_8_builder_type", "e20_4_binary_tree", "e22_5_health_statistics", "e23_4_protobuf_parsing", "e25_4_iterator_method_chaining"
+, "e26_5_gui_modules", "e27_4_luhn_algorithm", "e29_8_rewriting_with_result"]
+resolver = "2"
