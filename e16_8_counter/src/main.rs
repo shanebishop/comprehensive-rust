@@ -52,3 +52,33 @@ fn main() {
     strctr.count("apple");
     println!("got {} apples", strctr.times_seen("apple"));
 }
+
+#[test]
+fn test_i32_counter() {
+    let mut ctr = Counter::new();
+    ctr.count(13);
+    ctr.count(14);
+    ctr.count(16);
+    ctr.count(14);
+    ctr.count(14);
+    ctr.count(11);
+    assert_eq!(ctr.times_seen(10), 0);
+    assert_eq!(ctr.times_seen(11), 1);
+    assert_eq!(ctr.times_seen(12), 0);
+    assert_eq!(ctr.times_seen(13), 1);
+    assert_eq!(ctr.times_seen(14), 3);
+    assert_eq!(ctr.times_seen(15), 0);
+    assert_eq!(ctr.times_seen(16), 1);
+    assert_eq!(ctr.times_seen(17), 0);
+    assert_eq!(ctr.times_seen(18), 0);
+    assert_eq!(ctr.times_seen(19), 0);
+}
+
+#[test]
+fn test_str_counter() {
+    let mut strctr = Counter::new();
+    strctr.count("apple");
+    strctr.count("orange");
+    strctr.count("apple");
+    assert_eq!(strctr.times_seen("apple"), 2);
+}

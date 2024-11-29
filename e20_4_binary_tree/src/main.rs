@@ -17,11 +17,13 @@ impl<T: Ord> Subtree<T> {
 
     fn insert(&mut self, value: T) {
         match &mut self.0 {
-            None => self.0 = Some(Box::new(Node {
-                value,
-                left: Self::new(),
-                right: Self::new(),
-            })),
+            None => {
+                self.0 = Some(Box::new(Node {
+                    value,
+                    left: Self::new(),
+                    right: Self::new(),
+                }))
+            }
             Some(node) => {
                 if value == node.value {
                     return; // We store only unique items in the tree
@@ -52,7 +54,7 @@ impl<T: Ord> Subtree<T> {
     fn len(&self) -> usize {
         match &self.0 {
             None => 0,
-            Some(node) => 1 + node.left.len() + node.right.len()
+            Some(node) => 1 + node.left.len() + node.right.len(),
         }
     }
 }
@@ -67,7 +69,9 @@ pub struct BinaryTree<T: Ord> {
 
 impl<T: Ord> BinaryTree<T> {
     fn new() -> Self {
-        Self { root: Subtree::new() }
+        Self {
+            root: Subtree::new(),
+        }
     }
 
     fn insert(&mut self, value: T) {
@@ -126,8 +130,7 @@ mod tests {
     fn has() {
         let mut tree = BinaryTree::new();
         fn check_has(tree: &BinaryTree<i32>, exp: &[bool]) {
-            let got: Vec<bool> =
-                (0..exp.len()).map(|i| tree.has(&(i as i32))).collect();
+            let got: Vec<bool> = (0..exp.len()).map(|i| tree.has(&(i as i32))).collect();
             assert_eq!(&got, exp);
         }
 

@@ -1,0 +1,6 @@
+[package]
+name = "e30_7_ffi_wraper"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

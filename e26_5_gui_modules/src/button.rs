@@ -1,5 +1,5 @@
-use crate::Widget;
 use crate::Label;
+use crate::Widget;
 
 pub struct Button {
     label: Label,
@@ -7,7 +7,9 @@ pub struct Button {
 
 impl Button {
     pub fn new(label: &str) -> Button {
-        Button { label: Label::new(label) }
+        Button {
+            label: Label::new(label),
+        }
     }
 }
 

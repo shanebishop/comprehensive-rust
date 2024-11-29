@@ -30,3 +30,15 @@ fn main() {
     normalize(&mut v);
     println!("Magnitude of {v:?} after normalization: {}", magnitude(&v));
 }
+
+#[test]
+fn test_magnitude() {
+    assert_eq!(magnitude(&[0.0, 1.0, 0.0]), 1.0);
+}
+
+#[test]
+fn test_noramlize() {
+    let mut v = [1.0, 2.0, 9.0];
+    normalize(&mut v);
+    assert_eq!(magnitude(&v), 1.0);
+}

@@ -1,12 +1,12 @@
-pub mod window;
-pub mod widget;
-pub mod label;
 pub mod button;
+pub mod label;
+pub mod widget;
+pub mod window;
 
+use button::Button;
+use label::Label;
 use widget::Widget;
 use window::Window;
-use label::Label;
-use button::Button;
 
 fn main() {
     let mut window = Window::new("Rust GUI Demo 1.23");
